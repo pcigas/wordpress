@@ -9,7 +9,7 @@ services:
                 volumes:
                         - ./data/:/var/lib/postgresql/data/
                 ports:
-                        - 5432:5432
+                        - 5431:5432
 
         wordpress:
                 image: wordpress:v2
@@ -18,7 +18,7 @@ services:
                 links:
                         - db:database
                 environment:
-                        - WORDPRESS_DB_HOST=database:5432
+                        - WORDPRESS_DB_HOST=database:5431
                         - WORDPRESS_DB_USER=press
                         - WORDPRESS_DB_PASSWORD=secret
                         - WORDPRESS_DB_NAME=wordpress
